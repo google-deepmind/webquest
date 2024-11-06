@@ -1,4 +1,4 @@
-## WebQuest
+# WebQuest
 
 WebQuest is a multimodal benchmark focused on question answering based on the
 contents of web UIs.
@@ -13,12 +13,29 @@ the combination of information from multiple distinct parts of UIs. Furthermore,
 websites.
 
 WebQuest contains 3 categories of increasing difficulty:
-* Single screen QA: Questions based on the contents of a single screen.
-* Multi screen QA: Questions spanning multiple semantically related web pages.
+
+* `Single screen QA`: Questions based on the contents of a single screen.
+* `Multi screen QA`: Questions spanning multiple semantically related web pages.
 For this task, the web pages are filtered such that all of them are required to
 answer the question of interest
-* Trace QA:  Questions about the entire sequence of screens viewed by the user
+* `Trace QA`:  Questions about the entire sequence of screens viewed by the user
 as they navigate the web with a particular goal.
+
+
+## Dataset location
+
+The WebQuest dataset can be downloaded from [here](https://console.cloud.google.com/storage/browser/webquest/).
+
+## Dataset format
+
+Each datapoint is stored as a
+[TFRecord file](https://www.tensorflow.org/tutorials/load_data/tfrecord#reading_a_tfrecord_file_2)
+with compression type `'GZIP'` with the following fields:
+
+* `id`: a unique identifier integer for each QA pair.
+* `images`: a list of images encoded as PNGs associated with a question.
+* `question`: the question of interest.
+* `answer`: a list of answers, each of which is correct.
 
 
 ## Paper
